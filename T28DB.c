@@ -15,14 +15,17 @@ int main(int argc, char** argv) {
         printf("\n\n\n0-exit\n"
                 "1 - add pupil\n"
                 "2- print DB\n"
-                "3- delete pupil\n");
+                "3- delete pupil\n"
+                "4- sort by age\n"
+                "5 - save database\n"
+                "6- load database\n");
         
         ch = getchar();
         getchar();
         
-        while(ch == '\n')
+        /*while(ch == '\n')
             ch = getchar();
-        getchar();
+        getchar();*/
         
         switch(ch)
         {
@@ -45,6 +48,18 @@ int main(int argc, char** argv) {
                 scanf("%i", &x);
                 getchar();
                 DeletePupil(DB,&DBSIZE, x );
+            
+            case '4':
+                Sortbyage(DB, DBSIZE);
+                break;
+                
+            case '5':
+                SaveDB(DB,DBSIZE);
+                break;
+                
+            case '6':    
+                LoadDB(DB,&DBSIZE,MAX);
+                break;
             /*case '\n':
                     printf("Got nnn\n");
                     break;*/
